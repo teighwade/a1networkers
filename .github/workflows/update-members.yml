@@ -1,0 +1,29 @@
+name: Update member list from BNI
+on:
+  schedule:
+    - cron: '17 13 * * *'   # daily, 6:17 AM Arizona time
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/update-members.mjs', '.github/workflows/update-members.yml']
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - run: node scripts/update-members.mjs
+      - name: Commit changes
+        run: |
+          if git diff --quiet data/members.json; then echo "No member changes"; exit 0; fi
+          git config user.name "A1 Networkers bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/members.json
+          git commit -m "Update member list from BNI"
+          git pull --rebase
+          git push

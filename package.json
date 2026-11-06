@@ -1,0 +1,18 @@
+{
+  "name": "a1networkers",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "update-members": "node scripts/update-members.mjs"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "^5.2.0",
+    "@fontsource/source-sans-3": "^5.2.0",
+    "next": "15.5.28",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}
