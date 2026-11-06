@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { JsonLd, Avatar } from '../../../components/Bits';
 import { PostGrid } from '../../../components/Posts';
 import { posts, post } from '../../../lib/content';
-import { fmtDate, findMember } from '../../../lib/data';
+import { fmtDate, findMember, memberMedia } from '../../../lib/data';
 import { SITE_URL, NAME, MEETING } from '../../../lib/site';
 
 export const dynamicParams = false;
@@ -32,6 +32,7 @@ export default async function Post({ params }) {
         </header>
         <section className="band">
           <div className="wrap narrow">
+            {m && memberMedia(m.name)?.banner && <img className="post__banner" src={memberMedia(m.name).banner} alt={`${m.company} banner`} loading="lazy" />}
             <div className="prose post" dangerouslySetInnerHTML={{ __html: p.html }} />
             {m && (
               <aside className="card post__member">

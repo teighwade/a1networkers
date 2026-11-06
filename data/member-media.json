@@ -10,6 +10,11 @@
     "logo": "/img/members/horizon.png"
   },
   "Michael Rogoz": {
-    "logo": "/img/members/my-az-electrician.png"
+    "logo": "/img/members/my-az-electrician.png",
+    "banner": "/img/members/my-az-electrician-banner.jpg"
+  },
+  "Jordan Harford": {
+    "logo": "/img/members/pro-solutions-air.png",
+    "banner": "/img/members/pro-solutions-air-banner.jpg"
   }
 }

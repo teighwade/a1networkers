@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { JsonLd, Avatar } from '../../../components/Bits';
 import { issues, issue } from '../../../lib/content';
-import { fmtDate, findMember } from '../../../lib/data';
+import { fmtDate, findMember, memberMedia } from '../../../lib/data';
 import { SITE_URL, NAME, MEETING } from '../../../lib/site';
 
 export const dynamicParams = false;
@@ -41,6 +41,7 @@ export default async function Issue({ params }) {
                 </div>
               </aside>
             )}
+            {m && memberMedia(m.name)?.banner && <img className="post__banner" src={memberMedia(m.name).banner} alt={`${m.company} banner`} loading="lazy" />}
             <div className="prose post newsletter" dangerouslySetInnerHTML={{ __html: p.html }} />
             <aside className="post__cta">
               <h2>Join us any {MEETING.day}</h2>
