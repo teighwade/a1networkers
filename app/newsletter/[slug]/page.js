@@ -20,6 +20,7 @@ export default async function Issue({ params }) {
   return (
     <>
       <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: p.description, datePublished: p.date, author: { '@type': 'Organization', name: NAME }, mainEntityOfPage: `${SITE_URL}/newsletter/${p.slug}/` }} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` }, { '@type': 'ListItem', position: 2, name: 'Newsletter', item: `${SITE_URL}/newsletter/` }, { '@type': 'ListItem', position: 3, name: p.title, item: `${SITE_URL}/newsletter/${p.slug}/` }] }} />
       <article>
         <header className="phero">
           <div className="wrap narrow">

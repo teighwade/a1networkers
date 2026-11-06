@@ -1,6 +1,7 @@
 export const revalidate = 3600; // refresh hourly so "next speaker" moves on after each meeting
 import Link from 'next/link';
-import { PageHero, MeetingCard, NextSpeaker } from '../../components/Bits';
+import { PageHero, MeetingCard, NextSpeaker, JsonLd, meetingEvent } from '../../components/Bits';
+import { nextThursday } from '../../lib/data';
 import { FbIcon } from '../../components/Chrome';
 import { MEETING, MESSENGER, FACEBOOK } from '../../lib/site';
 
@@ -21,6 +22,7 @@ const STEPS = [
 export default function Visit() {
   return (
     <>
+      <JsonLd data={meetingEvent(nextThursday())} />
       <PageHero eyebrow="Be our guest" title="Visit a meeting">
         <p>Visitors are always welcome at BNI A1 Networkers. Come see how a referral meeting works, meet local business owners and find out whether BNI is a fit for you.</p>
       </PageHero>

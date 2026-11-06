@@ -2,9 +2,9 @@ import { PostGrid } from '../components/Posts';
 import { posts } from '../lib/content';
 export const revalidate = 3600; // refresh hourly so "next speaker" moves on after each meeting
 import Link from 'next/link';
-import { JsonLd, Avatar } from '../components/Bits';
+import { JsonLd, Avatar, meetingEvent } from '../components/Bits';
 import { FbIcon } from '../components/Chrome';
-import { members, leadership, findMember, speakers, fmtDate, todayAZ } from '../lib/data';
+import { members, leadership, findMember, speakers, fmtDate, nextThursday } from '../lib/data';
 import { FACEBOOK, MEETING, SITE_URL } from '../lib/site';
 
 const FAQS = [
@@ -14,12 +14,7 @@ const FAQS = [
   ['Who is A1 Networkers for?', 'Established business owners, entrepreneurs and growing professionals in Peoria, Glendale, Surprise, Sun City and across the West Valley who want to grow through referrals and real relationships.'],
 ];
 
-// Next Thursday on or after today (Arizona time).
-function nextThursday() {
-  const d = new Date(todayAZ() + 'T12:00:00Z');
-  d.setUTCDate(d.getUTCDate() + ((4 - d.getUTCDay() + 7) % 7));
-  return d.toISOString().slice(0, 10);
-}
+export const metadata = { alternates: { canonical: '/' } };
 
 export default function Home() {
   const all = members();
@@ -38,6 +33,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faq} />
+      <JsonLd data={meetingEvent(meetDate, next && nm ? `${next.name}, ${nm.company}` : null)} />
       <section className="lux-hero">
         <img className="lux-hero__img" src="/img/hero.webp" alt="BNI A1 Networkers members networking before our Thursday meeting at Brothers Family Restaurant" width="1100" height="1100" />
         <div className="wrap lux-hero__in">

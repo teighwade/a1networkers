@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MEETING } from '../lib/site';
+import { MEETING, SITE_URL, NAME } from '../lib/site';
 import { speakers, fmtDate, findMember, initials, memberMedia } from '../lib/data';
 
 export function JsonLd({ data }) {
@@ -58,4 +58,23 @@ export function NextSpeaker() {
       {upcoming.length > 1 && <p className="speaker__more"><Link href="/speakers/">See the full speaker rotation →</Link></p>}
     </div>
   );
+}
+
+// Schema.org Event for the weekly meeting (helps search engines and AI answers show "when and where").
+export function meetingEvent(date, speaker) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: `${NAME} weekly meeting`,
+    description: `Weekly BNI referral networking breakfast in ${MEETING.city}, AZ. Visitors welcome.${speaker ? ` Featured speaker: ${speaker}.` : ''}`,
+    startDate: `${date}T07:00:00-07:00`,
+    endDate: `${date}T08:30:00-07:00`,
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventSchedule: { '@type': 'Schedule', byDay: 'https://schema.org/Thursday', startTime: '07:00', repeatFrequency: 'P1W', scheduleTimezone: 'America/Phoenix' },
+    location: { '@type': 'Place', name: MEETING.venue, address: { '@type': 'PostalAddress', streetAddress: MEETING.street, addressLocality: MEETING.city, addressRegion: MEETING.state, postalCode: MEETING.zip, addressCountry: 'US' } },
+    organizer: { '@type': 'Organization', name: NAME, url: SITE_URL + '/' },
+    isAccessibleForFree: true,
+    url: SITE_URL + '/visit/',
+  };
 }
