@@ -1,69 +1,86 @@
 {
   "_note": "Logos/photos for members, keyed by the exact name in members.json. Files live in public/img/members/.",
   "Teigh Wade": {
-    "logo": "/img/members/logo-loco.png"
+    "logo": "/img/members/logo-loco.png",
+    "category": "Promo Products & Print"
   },
   "Tom Adkins": {
-    "logo": "/img/members/rapid-fire.png"
+    "logo": "/img/members/rapid-fire.png",
+    "category": "Plumbing"
   },
   "Adam Mistretta": {
     "logo": "/img/members/horizon.png",
-    "website": "https://www.mycarpetguys.com"
+    "website": "https://www.mycarpetguys.com",
+    "category": "Carpet & Tile Cleaner"
   },
   "Michael Rogoz": {
     "logo": "/img/members/my-az-electrician.png",
-    "banner": "/img/members/my-az-electrician-banner.jpg"
+    "banner": "/img/members/my-az-electrician-banner.jpg",
+    "category": "Electrician"
   },
   "Jordan Harford": {
     "logo": "/img/members/pro-solutions-air.png",
     "banner": "/img/members/pro-solutions-air-banner.jpg",
-    "website": "https://prosolutionsair.com"
+    "website": "https://prosolutionsair.com",
+    "category": "HVAC"
   },
   "Ben LeMere": {
     "logo": "/img/members/acey-systems.png"
   },
   "Christopher Reinhard": {
     "logo": "/img/members/chuckwalla.png",
-    "banner": "/img/members/chuckwalla-banner.jpg"
+    "banner": "/img/members/chuckwalla-banner.jpg",
+    "category": "Handyman"
   },
   "Justin Smith": {
-    "logo": "/img/members/boost-roofing.png"
+    "logo": "/img/members/boost-roofing.png",
+    "category": "Roofing"
   },
   "Sabrina Roberts": {
     "logo": "/img/members/sabrinas-sparkling-clean.png",
-    "banner": "/img/members/sabrinas-sparkling-clean-banner.jpg"
+    "banner": "/img/members/sabrinas-sparkling-clean-banner.jpg",
+    "category": "Professional Cleaner"
   },
   "Tanya Devoll": {
-    "logo": "/img/members/devoll-consulting.png"
+    "logo": "/img/members/devoll-consulting.png",
+    "category": "Accounting"
   },
   "Jeff Swarens": {
     "photo": "/img/members/jeff-swarens.jpg",
     "company": "Realty ONE Group"
   },
   "Lisa Gill": {
-    "logo": "/img/members/first-citizens-bank.png"
+    "logo": "/img/members/first-citizens-bank.png",
+    "category": "Banking"
   },
   "Michael Taylor": {
-    "logo": "/img/members/taylor-benefit-consulting.png"
+    "logo": "/img/members/taylor-benefit-consulting.png",
+    "category": "Medicare Insurance"
   },
   "Pat Diomede": {
-    "photo": "/img/members/pat-diomede.jpg"
+    "photo": "/img/members/pat-diomede.jpg",
+    "category": "Home Loans"
   },
   "Robert Velasco": {
-    "photo": "/img/members/robert-velasco.jpg"
+    "photo": "/img/members/robert-velasco.jpg",
+    "category": "Auto Mechanic"
   },
   "Rodrigo Navarrete": {
-    "photo": "/img/members/rodrigo-navarrete.jpg"
+    "photo": "/img/members/rodrigo-navarrete.jpg",
+    "category": "P&C Insurance"
   },
   "Rudy Pacheco": {
-    "photo": "/img/members/rudy-pacheco.jpg"
+    "photo": "/img/members/rudy-pacheco.jpg",
+    "category": "Doors & Windows"
   },
   "Steve Shmatko": {
-    "logo": "/img/members/edward-jones.png"
+    "logo": "/img/members/edward-jones.png",
+    "category": "Financial Advisor"
   },
   "Zoltan Hardi, MBA": {
     "photo": "/img/members/zoltan-hardi.jpg",
     "logo": "/img/members/good-payments.png",
-    "banner": "/img/members/good-payments-banner.jpg"
+    "banner": "/img/members/good-payments-banner.jpg",
+    "category": "Merchant Services"
   }
 }
