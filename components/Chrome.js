@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { NAV, MEETING, FACEBOOK, BNI_CHAPTER, NAME, FORMERLY } from '../lib/site';
 
-export function Logo() {
+export function Logo({ boxed }) {
   return (
-    <Link href="/" className="logo" aria-label={`${NAME} home`}>
-      <span className="logo__bni">BNI</span>
-      <span className="logo__name">A1 Networkers</span>
+    <Link href="/" className={boxed ? 'logo logo--boxed' : 'logo'} aria-label={`${NAME} home`}>
+      <img src="/img/logo.png" alt="BNI A1 Networkers" width="600" height="295" />
     </Link>
   );
 }
@@ -37,7 +36,7 @@ export function Footer() {
     <footer className="ftr">
       <div className="wrap ftr__grid">
         <div>
-          <Logo />
+          <Logo boxed />
           <p className="ftr__tag">A BNI chapter for West Valley business owners, built on referrals, trust and Givers Gain®.</p>
           <p className="ftr__small">Formerly {FORMERLY}</p>
         </div>

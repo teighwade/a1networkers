@@ -12,7 +12,7 @@ export default function About() {
       </PageHero>
       <section className="band">
         <div className="wrap split">
-          <img className="split__img" src="/img/about.png" alt="Business professionals shaking hands" width="1024" height="683" />
+          <img className="split__img" src="/img/about.webp" alt="Business professionals shaking hands" width="1024" height="683" />
           <div className="prose">
             <h2>Our story</h2>
             <p>BNI A1 Networkers, formerly {FORMERLY}, has helped West Valley businesses grow through referrals for over 20 years. We are one of many chapters of BNI (Business Network International), a global business referral organization.</p>

@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__media">
-            <img src="/img/hero.png" alt="BNI A1 Networkers members networking at a weekly meeting" width="1024" height="1024" />
+            <img src="/img/hero.webp" alt="BNI A1 Networkers members networking at a weekly meeting" width="1024" height="1024" />
           </div>
         </div>
       </section>
@@ -46,7 +46,7 @@ export default function Home() {
 
       <section className="band band--soft">
         <div className="wrap split">
-          <img className="split__img" src="/img/about.png" alt="Local business professionals shaking hands" width="1024" height="683" loading="lazy" />
+          <img className="split__img" src="/img/about.webp" alt="Local business professionals shaking hands" width="1024" height="683" loading="lazy" />
           <div className="prose">
             <p className="eyebrow">Who we are</p>
             <h2>A West Valley networking group for over 20 years</h2>
@@ -95,7 +95,7 @@ export default function Home() {
             </ul>
             <p><Link className="tlink" href="/leadership/">See the full leadership team →</Link></p>
           </div>
-          <img className="split__img" src="/img/meeting.png" alt="BNI A1 Networkers meeting" width="1024" height="1024" loading="lazy" />
+          <img className="split__img" src="/img/meeting.webp" alt="BNI A1 Networkers meeting" width="1024" height="1024" loading="lazy" />
         </div>
       </section>
 

@@ -12,7 +12,7 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: 'BNI A1 Networkers | Business Networking in Peoria & the West Valley', template: '%s | BNI A1 Networkers' },
   description: 'BNI A1 Networkers is a West Valley business networking group that meets every Thursday at 7:00 AM in Peoria, AZ. Visitors welcome. Grow your business through trusted referrals.',
-  openGraph: { siteName: NAME, locale: 'en_US', type: 'website', images: ['/img/hero.png'] },
+  openGraph: { siteName: NAME, locale: 'en_US', type: 'website', images: ['/img/og.jpg'] },
   icons: { icon: '/icon.svg' },
 };
 export const viewport = { themeColor: '#cf2030', width: 'device-width', initialScale: 1 };

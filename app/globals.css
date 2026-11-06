@@ -174,3 +174,7 @@ p { margin: 0 0 1em; }
 @media (max-width: 560px) { .ftr__grid { grid-template-columns: 1fr; } }
 .member__ind { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin: 0 0 4px; }
 .mgrid + .updated { margin-top: 28px; }
+.logo img { height: 46px; width: auto; }
+.logo--boxed { background: #fff; padding: 10px 14px; border-radius: 12px; }
+.logo--boxed img { height: 52px; }
+.split__img { aspect-ratio: 1 / 1; max-height: 560px; }
