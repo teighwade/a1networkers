@@ -15,7 +15,7 @@ Next.js site for the BNI A1 Networkers chapter (Peoria, AZ), hosted on Vercel. E
 
 - Blog posts: `content/blog/YYYY-MM-DD-slug.md`, published Monday, Wednesday and Friday by a scheduled task.
   Front matter: `title`, `date`, `category` (Networking, BNI, Member Spotlight, Business Tips, Seasonal), `description`, optional `member` (exact name from data/members.json, shows a contact card).
-- Newsletter: `content/newsletter/YYYY-MM.md`, published on the 1st of each month. Front matter: `title`, `date`, `spotlight` (member name), `description`.
+- Newsletter (published as **A1 Networkers Times**, shown in a newspaper layout): `content/newsletter/YYYY-MM.md`, published on the 1st of each month. Front matter: `title`, `date`, `spotlight` (member name), `description`.
   Sections: welcome, member spotlight, seasonal tips (home + business), networking tip, BNI news, BNI Arizona events (bniarizona.com/en-US/events), in our chapter (speakers, new members), bring a guest.
 - Posts with a future `date` stay hidden until that day. RSS feed at /feed.xml.
 - Never invent facts about a member business (no made-up prices, awards, years or reviews). Use their website, BNI profile and this repo.

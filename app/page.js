@@ -1,5 +1,6 @@
-import { PostGrid } from '../components/Posts';
-import { posts } from '../lib/content';
+import { PostCard } from '../components/Posts';
+import Carousel from '../components/Carousel';
+import { posts, issues } from '../lib/content';
 export const revalidate = 3600; // refresh hourly so "next speaker" moves on after each meeting
 import Link from 'next/link';
 import { JsonLd, Avatar, meetingEvent } from '../components/Bits';
@@ -20,7 +21,8 @@ export default function Home() {
   const all = members();
   const lead = leadership().roles.slice(0, 3);
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQS.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
-  const latest = posts().slice(0, 3);
+  const latest = posts().slice(0, 12);
+  const issue = issues()[0];
   const { upcoming } = speakers();
   const next = upcoming[0];
   const nm = next ? findMember(next.name) : null;
@@ -129,20 +131,43 @@ export default function Home() {
         </div>
       </section>
 
-      {latest.length > 0 && (
-        <section className="band">
-          <div className="wrap">
-            <div className="home-blog__head">
-              <h2 className="lux-h2">From the chapter journal</h2>
-              <div className="btnrow">
-                <Link className="btn btn--ghost" href="/blog/">All posts</Link>
-                <Link className="btn btn--ghost" href="/newsletter/">Monthly newsletter</Link>
+      <section className="band">
+        <div className="wrap">
+          {issue && (
+            <Link href={`/newsletter/${issue.slug}/`} className="nl-feature">
+              <div className="nl-feature__frame">
+                <div>
+                  <p className="nl-feature__k"><span className="nl-feature__mast">A1 Networkers Times</span>{fmtDate(issue.date, { month: 'long', year: 'numeric' })} edition</p>
+                  <h2 className="nl-feature__title">{issue.title.replace(/^[A-Za-z]+ \d{4}: /, '')}</h2>
+                  {issue.description && <p className="nl-feature__desc">{issue.description}</p>}
+                  <span className="nl-feature__cta">Read this month’s A1 Networkers Times</span>
+                </div>
+                {issue.spotlight && (
+                  <div className="nl-feature__spot">
+                    <Avatar name={issue.spotlight} size="lg" />
+                    <p><span>Member spotlight</span>{issue.spotlight.replace(/,.*$/, '')}{findMember(issue.spotlight) ? <small>{findMember(issue.spotlight).company}</small> : null}</p>
+                  </div>
+                )}
               </div>
-            </div>
-            <PostGrid items={latest} />
-          </div>
-        </section>
-      )}
+            </Link>
+          )}
+
+          {latest.length > 0 && (
+            <>
+              <div className="home-blog__head">
+                <h2 className="lux-h2">From the chapter journal</h2>
+                <div className="btnrow">
+                  <Link className="btn btn--ghost" href="/blog/">All posts</Link>
+                  <Link className="btn btn--ghost" href="/newsletter/">A1 Networkers Times</Link>
+                </div>
+              </div>
+              <Carousel label="Latest blog posts">
+                {latest.map((p) => <PostCard key={p.slug} p={p} />)}
+              </Carousel>
+            </>
+          )}
+        </div>
+      </section>
 
       <section className="band band--soft">
         <div className="wrap narrow">

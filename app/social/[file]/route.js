@@ -10,7 +10,7 @@ export const dynamicParams = false;
 
 const all = () => [
   ...posts().map((p) => ({ ...p, kicker: p.category })),
-  ...issues().map((p) => ({ ...p, slug: `newsletter-${p.slug}`, kicker: `Newsletter · ${fmtDate(p.date, { month: 'long', year: 'numeric' })}` })),
+  ...issues().map((p) => ({ ...p, slug: `newsletter-${p.slug}`, kicker: `A1 Networkers Times · ${fmtDate(p.date, { month: 'long', year: 'numeric' })}`, title: p.title.replace(/^[A-Za-z]+ \d{4}:\s*/, '') })),
 ];
 export function generateStaticParams() { return all().map((p) => ({ file: `${p.slug}.png` })); }
 

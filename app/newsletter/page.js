@@ -1,12 +1,13 @@
 import Link from 'next/link';
-import { PageHero } from '../../components/Bits';
+import { Avatar } from '../../components/Bits';
 import { issues } from '../../lib/content';
-import { fmtDate } from '../../lib/data';
-import { FACEBOOK } from '../../lib/site';
+import { fmtDate, findMember } from '../../lib/data';
+import { FACEBOOK, NAME } from '../../lib/site';
+import { PAPER, headline, issueNo } from '../../lib/times';
 
 export const metadata = {
-  title: 'Monthly Newsletter',
-  description: 'The BNI A1 Networkers monthly newsletter: a member spotlight, seasonal tips, networking advice, BNI news and BNI Arizona events.',
+  title: `${PAPER}: Monthly Newsletter`,
+  description: `${PAPER}, the monthly newsletter of BNI A1 Networkers: a member spotlight, seasonal tips for the West Valley, networking advice, BNI news and BNI Arizona events.`,
   alternates: { canonical: '/newsletter/' },
 };
 
@@ -14,32 +15,44 @@ export default function Newsletter() {
   const all = issues();
   const [latest, ...older] = all;
   return (
-    <>
-      <PageHero eyebrow="Newsletter" title="The A1 Networkers monthly">
-        <p>Every month: a member spotlight, seasonal tips for West Valley homes and businesses, networking advice, BNI news and upcoming BNI Arizona events.</p>
-      </PageHero>
-      <section className="band">
-        <div className="wrap narrow">
-          {latest ? (
-            <Link href={`/newsletter/${latest.slug}/`} className="card nl-latest">
-              <p className="eyebrow">Latest issue</p>
-              <h2>{latest.title}</h2>
-              {latest.description && <p>{latest.description}</p>}
-              {latest.spotlight && <p className="nl-latest__spot">Member spotlight: <b>{latest.spotlight}</b></p>}
-              <span className="tlink">Read the {fmtDate(latest.date, { month: 'long', year: 'numeric' })} issue →</span>
-            </Link>
-          ) : <p>Our first issue is on the way.</p>}
-          {older.length > 0 && (
-            <>
-              <h2 className="mt">Past issues</h2>
-              <ul className="nl-list">
-                {older.map((n) => <li key={n.slug}><Link href={`/newsletter/${n.slug}/`}><b>{fmtDate(n.date, { month: 'long', year: 'numeric' })}</b><span>{n.title}</span></Link></li>)}
-              </ul>
-            </>
-          )}
-          <p className="mt">New issues post on the first of each month. <a href={FACEBOOK} target="_blank" rel="noopener">Follow us on Facebook</a> to see each one when it comes out.</p>
-        </div>
-      </section>
-    </>
+    <div className="paper-wrap">
+      <div className="paper">
+        <header className="paper__mast">
+          <div className="paper__ears"><span>Published monthly</span><span>Peoria, Arizona</span><span>{all.length} editions</span></div>
+          <p className="paper__name">{PAPER}</p>
+          <p className="paper__motto">The monthly newsletter of {NAME} · Givers Gain®</p>
+          <div className="paper__dateline"><span>Member spotlights, seasonal tips, networking advice and BNI news</span><span>New edition on the 1st of each month</span></div>
+        </header>
+        {latest && (
+          <Link href={`/newsletter/${latest.slug}/`} className="times-latest">
+            <div>
+              <p className="paper__kicker">This month’s edition, {fmtDate(latest.date, { month: 'long', year: 'numeric' })}</p>
+              <h1 className="paper__h1">{headline(latest)}</h1>
+              {latest.description && <p className="paper__deck">{latest.description}</p>}
+              <span className="times-read">Read the {fmtDate(latest.date, { month: 'long' })} edition</span>
+            </div>
+            {latest.spotlight && (
+              <div className="times-spot"><Avatar name={latest.spotlight} size="lg" /><p><i>Member spotlight</i><b>{latest.spotlight.replace(/,.*$/, '')}</b>{findMember(latest.spotlight)?.company}</p></div>
+            )}
+          </Link>
+        )}
+        {older.length > 0 && (
+          <>
+            <h2 className="times-archive">Past editions</h2>
+            <div className="times-grid">
+              {older.map((n) => (
+                <Link key={n.slug} href={`/newsletter/${n.slug}/`} className="times-card">
+                  <span className="times-card__mast">{PAPER}</span>
+                  <span className="times-card__meta">Vol. 1, No. {issueNo(n)} · {fmtDate(n.date, { month: 'long', year: 'numeric' })}</span>
+                  <b>{headline(n)}</b>
+                  {n.spotlight && <span className="times-card__spot">Spotlight: {n.spotlight.replace(/,.*$/, '')}</span>}
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
+        <p className="paper__foot">New editions post on the first of each month. <a href={FACEBOOK} target="_blank" rel="noopener">Follow us on Facebook</a> to catch each one.</p>
+      </div>
+    </div>
   );
 }

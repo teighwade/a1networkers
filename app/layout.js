@@ -1,6 +1,10 @@
 import '@fontsource/bodoni-moda/500.css';
 import '@fontsource/bodoni-moda/500-italic.css';
 import '@fontsource/bodoni-moda/600.css';
+import '@fontsource/unifrakturmaguntia/400.css';
+import '@fontsource/old-standard-tt/400.css';
+import '@fontsource/old-standard-tt/400-italic.css';
+import '@fontsource/old-standard-tt/700.css';
 import '@fontsource/instrument-sans/400.css';
 import '@fontsource/instrument-sans/500.css';
 import '@fontsource/instrument-sans/600.css';
