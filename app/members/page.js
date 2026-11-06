@@ -24,11 +24,10 @@ export default function Members() {
               <article key={m.name} className="card member">
                 <Avatar name={m.name} />
                 <div>
-                  <p className="member__ind">{m.industry}</p>
+                  <p className="member__ind">{m.specialty}</p>
                   <h3>{m.name}</h3>
                   <p className="member__co">{m.company}</p>
-                  <p className="member__cat">{m.specialty}</p>
-                  {m.bniSpecialty !== m.specialty && <p className="member__spec">{m.bniSpecialty}</p>}
+                  <p className="member__spec">{m.bniSpecialty}</p>
                   <p className="member__links">
                     <a href={`tel:+1${m.phone.replace(/\D/g, '')}`}>{m.phone}</a>
                     {m.website && <a href={m.website} target="_blank" rel="noopener">Website ↗</a>}
