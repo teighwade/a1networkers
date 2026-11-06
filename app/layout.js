@@ -1,8 +1,9 @@
-import '@fontsource/archivo/700.css';
-import '@fontsource/archivo/800.css';
-import '@fontsource/source-sans-3/400.css';
-import '@fontsource/source-sans-3/600.css';
-import '@fontsource/source-sans-3/700.css';
+import '@fontsource/bodoni-moda/500.css';
+import '@fontsource/bodoni-moda/500-italic.css';
+import '@fontsource/bodoni-moda/600.css';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
+import '@fontsource/instrument-sans/600.css';
 import './globals.css';
 import { Header, Footer } from '../components/Chrome';
 import { JsonLd } from '../components/Bits';
@@ -15,7 +16,7 @@ export const metadata = {
   openGraph: { siteName: NAME, locale: 'en_US', type: 'website', images: ['/img/og.jpg'] },
   icons: { icon: '/icon.svg' },
 };
-export const viewport = { themeColor: '#cf2030', width: 'device-width', initialScale: 1 };
+export const viewport = { themeColor: '#5c0d1a', width: 'device-width', initialScale: 1 };
 
 const org = {
   '@context': 'https://schema.org',

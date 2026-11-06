@@ -2,9 +2,9 @@ import { PostGrid } from '../components/Posts';
 import { posts } from '../lib/content';
 export const revalidate = 3600; // refresh hourly so "next speaker" moves on after each meeting
 import Link from 'next/link';
-import { MeetingCard, NextSpeaker, JsonLd, Avatar } from '../components/Bits';
+import { JsonLd, Avatar } from '../components/Bits';
 import { FbIcon } from '../components/Chrome';
-import { members, leadership, findMember } from '../lib/data';
+import { members, leadership, findMember, speakers, fmtDate, todayAZ } from '../lib/data';
 import { FACEBOOK, MEETING, SITE_URL } from '../lib/site';
 
 const FAQS = [
@@ -14,105 +14,133 @@ const FAQS = [
   ['Who is A1 Networkers for?', 'Established business owners, entrepreneurs and growing professionals in Peoria, Glendale, Surprise, Sun City and across the West Valley who want to grow through referrals and real relationships.'],
 ];
 
+// Next Thursday on or after today (Arizona time).
+function nextThursday() {
+  const d = new Date(todayAZ() + 'T12:00:00Z');
+  d.setUTCDate(d.getUTCDate() + ((4 - d.getUTCDay() + 7) % 7));
+  return d.toISOString().slice(0, 10);
+}
+
 export default function Home() {
   const all = members();
-  const industries = [...new Set(all.map((m) => m.industry))].sort();
   const lead = leadership().roles.slice(0, 3);
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQS.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
   const latest = posts().slice(0, 3);
+  const { upcoming } = speakers();
+  const next = upcoming[0];
+  const nm = next ? findMember(next.name) : null;
+  const meetDate = nextThursday();
+  const whys = [
+    ['Referrals, every week', 'Each Thursday the room hears exactly who you want to meet, and spends the week looking for them.'],
+    ['One seat per profession', 'There is only one plumber, one banker and one realtor at the table, so the referrals in your line of work come to you.'],
+    ['Better at telling your story', 'Short weekly presentations, a featured talk in rotation and one-to-ones with members sharpen how you describe what you do.'],
+  ];
   return (
     <>
       <JsonLd data={faq} />
-      <section className="hero">
-        <div className="wrap hero__in">
-          <div className="hero__copy">
-            <p className="hero__pill">{MEETING.day}s at {MEETING.time} · Visitors welcome</p>
-            <h1>Grow your business through <em>trusted referrals.</em></h1>
-            <p className="hero__lead">BNI A1 Networkers is a community of West Valley business owners who meet every week to give referrals, share what we do and help each other grow.</p>
-            <div className="btnrow">
-              <Link className="btn btn--red btn--lg" href="/visit/">Visit a meeting</Link>
-              <a className="btn btn--ghost btn--lg" href={FACEBOOK} target="_blank" rel="noopener"><FbIcon /> Follow us on Facebook</a>
-            </div>
-          </div>
-          <div className="hero__media">
-            <img src="/img/hero.webp" alt="BNI A1 Networkers members networking before our Thursday meeting at Brothers Family Restaurant" width="1100" height="1100" />
+      <section className="lux-hero">
+        <img className="lux-hero__img" src="/img/hero.webp" alt="BNI A1 Networkers members networking before our Thursday meeting at Brothers Family Restaurant" width="1100" height="1100" />
+        <div className="wrap lux-hero__in">
+          <h1>Thursday mornings, the West Valley does business together.</h1>
+          <p className="lux-hero__lead">BNI A1 Networkers is a referral circle of local business owners who meet over breakfast in Peoria every week, with one seat per profession.</p>
+          <div className="btnrow">
+            <Link className="btn btn--light btn--lg" href="/visit/">Visit as our guest</Link>
+            <a className="btn btn--line-light btn--lg" href={FACEBOOK} target="_blank" rel="noopener"><FbIcon /> Facebook</a>
           </div>
         </div>
       </section>
 
-      <section className="band">
-        <div className="wrap cards2">
-          <MeetingCard />
-          <NextSpeaker />
+      <div className="wrap">
+        <aside className="invite" aria-label="Next meeting">
+          <div className="invite__frame">
+            <div className="invite__col">
+              <p className="invite__k">You’re invited</p>
+              <p className="invite__when">{fmtDate(meetDate, { weekday: 'long', month: 'long', day: 'numeric' })}<span>{MEETING.time}</span></p>
+              <p className="invite__where">{MEETING.venue}<br />{MEETING.street}, {MEETING.city}</p>
+              <div className="invite__actions">
+                <Link className="btn btn--red" href="/visit/">Plan your visit</Link>
+                <a className="tlink" href={MEETING.map} target="_blank" rel="noopener">Get directions</a>
+              </div>
+            </div>
+            {next && (
+              <div className="invite__col invite__col--speaker">
+                <p className="invite__k">{next.date === meetDate ? 'Featured speaker' : `Next featured speaker, ${fmtDate(next.date, { month: 'long', day: 'numeric' })}`}</p>
+                <div className="invite__spk">
+                  <Avatar name={next.name} size="lg" />
+                  <div>
+                    <p className="invite__name">{next.name}</p>
+                    {nm && <p className="invite__co">{nm.company}<br /><span>{nm.specialty}</span></p>}
+                  </div>
+                </div>
+                <Link className="tlink" href="/speakers/">Speaker rotation</Link>
+              </div>
+            )}
+          </div>
+        </aside>
+      </div>
+
+      <section className="band lux-about">
+        <div className="wrap lux-about__in">
+          <p className="lux-statement">For more than twenty years, West Valley business owners have met at this table to trade introductions, advice and their most trusted referrals.</p>
+          <div className="lux-about__side">
+            <img src="/img/about.webp" alt="Members listening to a presentation at a BNI A1 Networkers meeting" width="900" height="900" loading="lazy" />
+            <p>Formerly BNI Grand Networkers, our chapter is part of BNI, the world’s leading business referral organization. Members give short weekly presentations, pass referrals and meet one-to-one, all guided by Givers Gain®: help others grow, and your business grows with them.</p>
+            <Link className="tlink" href="/about/">About the chapter</Link>
+          </div>
         </div>
       </section>
 
       <section className="band band--soft">
-        <div className="wrap split">
-          <img className="split__img" src="/img/about.webp" alt="Members listening to a presentation at a BNI A1 Networkers meeting" width="900" height="900" loading="lazy" />
-          <div className="prose">
-            <p className="eyebrow">Who we are</p>
-            <h2>A West Valley networking group for over 20 years</h2>
-            <p>BNI A1 Networkers, formerly BNI Grand Networkers, has served the West Valley business community for more than 20 years. Every week our members share referrals, give short presentations about their businesses and learn new ways to grow, all built on the BNI philosophy of <b>Givers Gain®</b>.</p>
-            <p>Whether you are an established owner, a new entrepreneur or a growing professional, you will find a supportive group of people who want to see you succeed.</p>
-            <p><Link className="tlink" href="/about/">More about our chapter →</Link></p>
+        <div className="wrap">
+          <h2 className="lux-h2">Why owners keep a seat</h2>
+          <div className="whys">
+            {whys.map(([h, t]) => <div key={h} className="why"><h3>{h}</h3><p>{t}</p></div>)}
           </div>
         </div>
       </section>
 
       <section className="band">
         <div className="wrap">
-          <div className="center">
-            <p className="eyebrow">How it works</p>
-            <h2>Why business owners join BNI</h2>
+          <div className="roster__head">
+            <h2 className="lux-h2">{all.length} seats at the table</h2>
+            <p>One business per profession. When you need a trade or a service, start with someone the chapter already trusts.</p>
           </div>
-          <div className="cards3">
-            <div className="card feat"><span className="feat__n">1</span><h3>Referrals every week</h3><p>Members actively look for business for each other, so you have a room full of people sending customers your way.</p></div>
-            <div className="card feat"><span className="feat__n">2</span><h3>One seat per profession</h3><p>Only one member per specialty, so the referrals for your line of work come to you.</p></div>
-            <div className="card feat"><span className="feat__n">3</span><h3>Learn and grow</h3><p>Weekly education, member presentations and one-to-one meetings sharpen how you talk about your business.</p></div>
-          </div>
+          <ul className="roster">
+            {all.map((m) => (
+              <li key={m.name}>
+                <Avatar name={m.name} size="lg" />
+                <b>{m.name.replace(/,.*$/, '')}</b>
+                <span>{m.specialty}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="center"><Link className="btn btn--red btn--lg" href="/members/">Browse the member directory</Link></div>
         </div>
       </section>
 
-      <section className="band band--dark">
-        <div className="wrap">
-          <div className="center">
-            <p className="eyebrow eyebrow--light">Our members</p>
-            <h2>{all.length} local businesses, one seat per profession</h2>
-            <p className="lead-light">From HVAC and plumbing to banking, insurance and real estate, our members cover the services West Valley families and businesses need.</p>
-          </div>
-          <ul className="chips">{all.map((m) => <li key={m.name}><b>{m.specialty}</b><span>{m.company}</span></li>)}</ul>
-          <div className="center"><Link className="btn btn--red btn--lg" href="/members/">Meet our members</Link></div>
-        </div>
-      </section>
-
-      <section className="band">
+      <section className="band band--soft">
         <div className="wrap split split--rev">
           <div className="prose">
-            <p className="eyebrow">Chapter leadership</p>
-            <h2>Led by members, for members</h2>
+            <h2 className="lux-h2">Led by members</h2>
             <ul className="leadmini">
               {lead.map((r) => r.names.map((n) => { const m = findMember(n); return (
-                <li key={r.role + n}><Avatar name={n} /><span><b>{n}</b><small>{r.role}{m ? ` · ${m.company}` : ''}</small></span></li>
+                <li key={r.role + n}><Avatar name={n} /><span><b>{n}</b><small>{r.role}{m ? `, ${m.company}` : ''}</small></span></li>
               ); }))}
             </ul>
-            <p><Link className="tlink" href="/leadership/">See the full leadership team →</Link></p>
+            <p><Link className="tlink" href="/leadership/">The full leadership team</Link></p>
           </div>
           <img className="split__img" src="/img/meeting.webp" alt="A member giving her weekly presentation at BNI A1 Networkers" width="414" height="414" loading="lazy" />
         </div>
       </section>
 
       {latest.length > 0 && (
-        <section className="band band--soft">
+        <section className="band">
           <div className="wrap">
             <div className="home-blog__head">
-              <div>
-                <p className="eyebrow">From the blog</p>
-                <h2>Networking tips and member stories</h2>
-              </div>
+              <h2 className="lux-h2">From the chapter journal</h2>
               <div className="btnrow">
                 <Link className="btn btn--ghost" href="/blog/">All posts</Link>
-                <Link className="btn btn--red" href="/newsletter/">Monthly newsletter</Link>
+                <Link className="btn btn--ghost" href="/newsletter/">Monthly newsletter</Link>
               </div>
             </div>
             <PostGrid items={latest} />
@@ -120,20 +148,20 @@ export default function Home() {
         </section>
       )}
 
-      <section className="band">
+      <section className="band band--soft">
         <div className="wrap narrow">
-          <h2 className="center">Questions about visiting</h2>
+          <h2 className="lux-h2 center">Questions about visiting</h2>
           <div className="faq">{FAQS.map(([q, a], i) => <details key={q} open={i === 0}><summary>{q}</summary><p>{a}</p></details>)}</div>
         </div>
       </section>
 
-      <section className="band cta">
+      <section className="lux-close">
         <div className="wrap center">
-          <h2>Come see us this {MEETING.day}</h2>
-          <p>{MEETING.time} at {MEETING.venue}, {MEETING.street}, {MEETING.city}.</p>
+          <h2>A seat is waiting for you this {MEETING.day}.</h2>
+          <p>{MEETING.time} at {MEETING.venue}, {MEETING.street}, {MEETING.city}. Visitors are always welcome.</p>
           <div className="btnrow btnrow--center">
-            <Link className="btn btn--white btn--lg" href="/visit/">Plan your visit</Link>
-            <a className="btn btn--outline-white btn--lg" href={MEETING.map} target="_blank" rel="noopener">Get directions</a>
+            <Link className="btn btn--light btn--lg" href="/visit/">Plan your visit</Link>
+            <a className="btn btn--line-light btn--lg" href={MEETING.map} target="_blank" rel="noopener">Get directions</a>
           </div>
         </div>
       </section>
