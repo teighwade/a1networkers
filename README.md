@@ -24,4 +24,4 @@ Next.js site for the BNI A1 Networkers chapter (Peoria, AZ), hosted on Vercel. E
 
 ## Live site
 
-The site has moved to its own domain: **https://bnia1networkers.com** (Vercel project a1networkers-zbls, DNS at GoDaddy). Use this domain in all links, Facebook posts and newsletters. a1networkers-zbls.vercel.app still works as a backup address.
+The site lives at **https://www.bnia1networkers.com** (bnia1networkers.com redirects to www). Vercel project "bnia1networkers", DNS at GoDaddy. Use https://www.bnia1networkers.com in all links, Facebook posts and newsletters. Backup address: https://bnia1networkers.vercel.app
