@@ -11,7 +11,7 @@ export function generateStaticParams() { return posts().map((p) => ({ slug: p.sl
 export async function generateMetadata({ params }) {
   const p = post((await params).slug);
   if (!p) return {};
-  return { title: p.title, description: p.description, alternates: { canonical: `/blog/${p.slug}/` }, openGraph: { type: 'article', title: p.title, description: p.description, publishedTime: p.date } };
+  return { title: p.title, description: p.description, alternates: { canonical: `/blog/${p.slug}/` }, openGraph: { type: 'article', title: p.title, description: p.description, publishedTime: p.date, images: [`/social/${p.slug}.png`] } };
 }
 
 export default async function Post({ params }) {
