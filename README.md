@@ -19,5 +19,5 @@ Next.js site for the BNI A1 Networkers chapter (Peoria, AZ), hosted on Vercel. E
   Sections: welcome, member spotlight, seasonal tips (home + business), networking tip, BNI news, BNI Arizona events (bniarizona.com/en-US/events), in our chapter (speakers, new members), bring a guest.
 - Posts with a future `date` stay hidden until that day. RSS feed at /feed.xml.
 - Never invent facts about a member business (no made-up prices, awards, years or reviews). Use their website, BNI profile and this repo.
-- Every post and issue gets a branded 1200x1200 image at /social/<slug>.png (newsletter: /social/newsletter-YYYY-MM.png), used for Facebook and link previews. Photos come from public/img/social/ (add more chapter photos there and to PHOTOS in app/social/[file]/route.js).
+- Every post and issue gets a branded 1200x1200 image at /social/<slug>.png (newsletter: /social/newsletter-YYYY-MM.png), used for Facebook and link previews. Photos come from public/img/chapter/ (add more chapter photos there and to PHOTOS in app/social/[file]/route.js). Spotlight posts show the member logo from data/member-media.json.
 - Facebook: Metricool brand "BNI A1 Networkers" (blogId 7926423), Facebook only. The blog and newsletter scheduled tasks also schedule a Facebook post for each new post.

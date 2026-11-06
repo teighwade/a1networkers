@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { MEETING } from '../lib/site';
-import { speakers, fmtDate, findMember, initials } from '../lib/data';
+import { speakers, fmtDate, findMember, initials, memberMedia } from '../lib/data';
 
 export function JsonLd({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />;
@@ -33,6 +33,8 @@ export function MeetingCard() {
 }
 
 export function Avatar({ name, size = 'md' }) {
+  const media = memberMedia(name);
+  if (media?.logo) return <span className={`avatar avatar--${size} avatar--logo`} aria-hidden="true"><img src={media.logo} alt="" width="400" height="400" loading="lazy" /></span>;
   return <span className={`avatar avatar--${size}`} aria-hidden="true">{initials(name)}</span>;
 }
 

@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ImageResponse } from 'next/og';
 import { posts, issues } from '../../../lib/content';
-import { fmtDate } from '../../../lib/data';
+import { fmtDate, memberMedia } from '../../../lib/data';
 
 // Branded 1200x1200 social image for each blog post and newsletter issue: /social/<slug>.png
 export const dynamic = 'force-static';
@@ -15,20 +15,30 @@ const all = () => [
 export function generateStaticParams() { return all().map((p) => ({ file: `${p.slug}.png` })); }
 
 const dataUrl = (rel, type) => `data:${type};base64,${fs.readFileSync(path.join(process.cwd(), 'public', rel)).toString('base64')}`;
-const PHOTOS = ['img/social/hero.jpg', 'img/social/meeting.jpg', 'img/social/about.jpg'];
+const PHOTOS = ['img/chapter/meeting-1.jpg', 'img/chapter/meeting-2.jpg', 'img/chapter/meeting-3.jpg', 'img/chapter/meeting-4.jpg'];
 
 export async function GET(_req, { params }) {
   const slug = (await params).file.replace(/\.png$/, '');
   const p = all().find((x) => x.slug === slug);
   if (!p) return new Response('Not found', { status: 404 });
-  const photo = PHOTOS[[...slug].reduce((a, c) => a + c.charCodeAt(0), 0) % PHOTOS.length];
+  const n = [...slug].reduce((a, c) => a + c.charCodeAt(0), 0);
+  const photoA = PHOTOS[n % PHOTOS.length], photoB = PHOTOS[(n + 1 + (n >> 2) % 3) % PHOTOS.length];
+  const who = p.member || p.spotlight;
+  const logo = who ? memberMedia(who)?.logo?.replace(/^\//, '') : null;
   const len = p.title.length;
   const font = (w) => fs.readFileSync(path.join(process.cwd(), `node_modules/@fontsource/archivo/files/archivo-latin-${w}-normal.woff`));
   return new ImageResponse(
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', background: '#17171c', fontFamily: 'Archivo' }}>
         <div style={{ display: 'flex', height: 660, position: 'relative' }}>
-          <img src={dataUrl(photo, 'image/jpeg')} width={1200} height={660} style={{ objectFit: 'cover', objectPosition: 'center 30%', width: 1200, height: 660 }} />
+          <img src={dataUrl(photoA, 'image/jpeg')} width={600} height={660} style={{ objectFit: 'cover', width: 600, height: 660 }} />
+          {logo ? (
+            <div style={{ width: 600, height: 660, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', borderLeft: '6px solid #17171c' }}>
+              <img src={dataUrl(logo, 'image/png')} width={460} height={460} />
+            </div>
+          ) : (
+            <img src={dataUrl(photoB, 'image/jpeg')} width={600} height={660} style={{ objectFit: 'cover', width: 600, height: 660, borderLeft: '6px solid #17171c' }} />
+          )}
           <div style={{ position: 'absolute', left: 48, top: 44, display: 'flex', background: '#fff', borderRadius: 18, padding: '14px 22px' }}>
             <img src={dataUrl('img/logo.png', 'image/png')} width={244} height={120} />
           </div>

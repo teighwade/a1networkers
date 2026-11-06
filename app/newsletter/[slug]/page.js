@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { JsonLd } from '../../../components/Bits';
+import { JsonLd, Avatar } from '../../../components/Bits';
 import { issues, issue } from '../../../lib/content';
 import { fmtDate, findMember } from '../../../lib/data';
 import { SITE_URL, NAME, MEETING } from '../../../lib/site';
@@ -33,7 +33,7 @@ export default async function Issue({ params }) {
             {m && (
               <aside className="card post__member">
                 <p className="eyebrow">This month’s member spotlight</p>
-                <p className="post__mname">{m.name}</p>
+                <div className="post__mrow"><Avatar name={m.name} size="lg" /><p className="post__mname">{m.name}</p></div>
                 <p>{m.company} · {m.specialty}</p>
                 <div className="btnrow">
                   {m.phone && <a className="btn btn--red" href={`tel:${m.phone.replace(/\D/g, '')}`}>Call {m.phone}</a>}

@@ -1,0 +1,6 @@
+{
+  "_note": "Logos/photos for members, keyed by the exact name in members.json. Files live in public/img/members/.",
+  "Teigh Wade": { "logo": "/img/members/logo-loco.png" },
+  "Tom Adkins": { "logo": "/img/members/rapid-fire.png" },
+  "Adam Mistretta": { "logo": "/img/members/horizon.png" }
+}
