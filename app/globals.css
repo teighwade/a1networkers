@@ -448,3 +448,13 @@ h3 { font-family: var(--display); font-size: 23px; font-weight: 600; }
 .member__cat { margin: 4px 0 0; font-weight: 600; color: var(--claret); font-size: 16px; }
 .member__cat + .member__spec { margin-top: 0; }
 .member__co + .member__spec { margin-top: 2px; }
+
+/* Handshake cursor (mouse/trackpad only): red-and-white handshake; gold sparkles over links and buttons */
+@media (pointer: fine) {
+  html, body { cursor: url('/img/cursor/hand.png') 16 12, auto; cursor: image-set(url('/img/cursor/hand.png') 1x, url('/img/cursor/hand@2x.png') 2x) 16 12, auto; }
+  a, button, summary, label, select, [role='button'], .btn, .carousel__btn {
+    cursor: url('/img/cursor/hand-hover.png') 16 12, pointer;
+    cursor: image-set(url('/img/cursor/hand-hover.png') 1x, url('/img/cursor/hand-hover@2x.png') 2x) 16 12, pointer;
+  }
+  input, textarea { cursor: text; }
+}
