@@ -30,6 +30,7 @@ export default function Members() {
                   <p className="member__spec">{m.specialty}</p>
                   <p className="member__links">
                     <a href={`tel:+1${m.phone.replace(/\D/g, '')}`}>{m.phone}</a>
+                    {m.website && <a href={m.website} target="_blank" rel="noopener">Website ↗</a>}
                     {m.profileUrl && <a href={m.profileUrl} target="_blank" rel="noopener">BNI profile ↗</a>}
                   </p>
                 </div>

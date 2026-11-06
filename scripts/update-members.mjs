@@ -20,16 +20,28 @@ const rows = await page.$$eval('table tbody tr', (trs) => trs.map((tr) => {
   const a = tr.querySelector('a[href]');
   return { cells: c, href: a ? a.href : '' };
 }));
+// Each member's BNI profile lists their business website (when they've added one).
+const SKIP = /bni|bnitos|linkedin|facebook|instagram|twitter|x\.com|youtube|tiktok|google|apple\.com|yelp/i;
+const websites = {};
+for (const r of rows) {
+  if (!r.href) continue;
+  try {
+    await page.goto(r.href, { waitUntil: 'networkidle', timeout: 45000 });
+    const links = await page.$$eval('a[href]', (as) => as.map((a) => a.href));
+    const site = links.find((h) => /^https?:/.test(h) && !SKIP.test(new URL(h).hostname));
+    if (site) websites[r.href] = site.replace(/\/$/, '');
+  } catch (e) { console.log('Profile failed:', r.cells[0], e.message); }
+}
 await browser.close();
 
 const members = rows.filter((r) => r.cells.length >= 4 && r.cells[0]).map(({ cells, href }) => {
   const parts = cells[2].split('>').map((s) => s.trim()).filter(Boolean);
-  return { name: cells[0], company: cells[1], industry: parts[0] || '', specialty: parts.at(-1) || '', phone: fmtPhone(cells[3]), profileUrl: href };
+  return { name: cells[0], company: cells[1], industry: parts[0] || '', specialty: parts.at(-1) || '', phone: fmtPhone(cells[3]), profileUrl: href, website: websites[href] || '' };
 });
 if (members.length < 5) { console.error(`Only ${members.length} members found; not updating.`); process.exit(1); }
 
 const old = JSON.parse(fs.readFileSync(FILE, 'utf8'));
-const key = (ms) => JSON.stringify(ms.map((m) => [m.name, m.company, m.specialty, m.phone, m.profileUrl]).sort());
+const key = (ms) => JSON.stringify(ms.map((m) => [m.name, m.company, m.specialty, m.phone, m.profileUrl, m.website || '']).sort());
 if (key(old.members) === key(members)) { console.log(`No changes (${members.length} members).`); process.exit(0); }
 const today = new Date(Date.now() - 7 * 3600e3).toISOString().slice(0, 10);
 const before = new Set(old.members.map((m) => m.name)); const after = new Set(members.map((m) => m.name));

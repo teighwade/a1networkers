@@ -37,6 +37,7 @@ export default async function Issue({ params }) {
                 <p>{m.company} · {m.specialty}</p>
                 <div className="btnrow">
                   {m.phone && <a className="btn btn--red" href={`tel:${m.phone.replace(/\D/g, '')}`}>Call {m.phone}</a>}
+                  {m.website && <a className="btn btn--ghost" href={m.website} target="_blank" rel="noopener">Visit website ↗</a>}
                   {m.profileUrl && <a className="btn btn--ghost" href={m.profileUrl} target="_blank" rel="noopener">BNI profile ↗</a>}
                 </div>
               </aside>
