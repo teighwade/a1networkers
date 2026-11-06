@@ -107,9 +107,11 @@ export default function Home() {
           <ul className="roster">
             {all.map((m) => (
               <li key={m.name}>
-                <Avatar name={m.name} size="lg" />
-                <b>{m.name.replace(/,.*$/, '')}</b>
-                <span>{m.specialty}</span>
+                <a href={m.profileUrl || '/members/'} target={m.profileUrl ? '_blank' : undefined} rel="noopener" aria-label={`${m.name.replace(/,.*$/, '')}, ${m.company}: BNI profile`}>
+                  <Avatar name={m.name} size="lg" />
+                  <b>{m.name.replace(/,.*$/, '')}</b>
+                  <span>{m.specialty}</span>
+                </a>
               </li>
             ))}
           </ul>

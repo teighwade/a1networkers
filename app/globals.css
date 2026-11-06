@@ -438,3 +438,10 @@ h3 { font-family: var(--display); font-size: 23px; font-weight: 600; }
 @media (max-width: 760px) { .times-latest { grid-template-columns: 1fr; } .times-spot { border-left: 0; border-top: 1px solid #cfcac0; padding: 20px 0 0; } }
 .nl-feature__mast { display: block; font-family: "UnifrakturMaguntia", serif; font-style: normal; font-size: 38px; color: #fff; line-height: 1.1; margin-bottom: 4px; }
 .paper .btn--red, .paper .btn--red:hover { color: #fff; }
+/* About gallery: fixed columns so every row is full (32 photos, the first one large) */
+.gallery { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } .gallery img:first-child { grid-column: auto; grid-row: auto; } }
+.roster a { display: flex; flex-direction: column; align-items: center; text-align: center; color: inherit; text-decoration: none; }
+.roster a:hover b { color: var(--claret); text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: 4px; }
+.roster a:hover .avatar { box-shadow: 0 0 0 3px var(--brass-l); }
+.roster a span { color: var(--muted); font-size: 14.5px; line-height: 1.35; margin-top: 3px; }
