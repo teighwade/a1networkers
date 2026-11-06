@@ -31,3 +31,5 @@ The site lives at **https://www.bnia1networkers.com** (bnia1networkers.com redir
 Chapter leadership roles change every October 1. `data/leadership.json` lists the team for the term that started October 1, 2026. Never credit someone with a role in content dated before the start of that term. Update leadership.json each October.
 
 Company names: BNI lists Jeff Swarens under RE/MAX Professionals, but he is with Realty ONE Group (override in data/member-media.json).
+
+Profession labels: the chapter uses its own short labels (e.g. "Carpet & Tile Cleaner", "Medicare Insurance"). They are set as `category` in data/member-media.json and replace the BNI specialty everywhere on the site.
