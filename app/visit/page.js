@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { PageHero, MeetingCard, NextSpeaker, JsonLd, meetingEvent } from '../../components/Bits';
 import { nextThursday } from '../../lib/data';
 import { FbIcon } from '../../components/Chrome';
-import { MEETING, MESSENGER, FACEBOOK } from '../../lib/site';
+import { MEETING, MESSENGER, FACEBOOK, VISITOR_REG } from '../../lib/site';
 
 export const metadata = {
   title: 'Visit a Meeting',
@@ -43,7 +43,8 @@ export default function Visit() {
           <h2>Questions before you come?</h2>
           <p>Send us a message on Facebook and a member of our team will get back to you.</p>
           <div className="btnrow">
-            <a className="btn btn--red" href={MESSENGER} target="_blank" rel="noopener"><FbIcon /> Message us</a>
+            <a className="btn btn--red" href={VISITOR_REG} target="_blank" rel="noopener">Register as a visitor</a>
+            <a className="btn btn--ghost" href={MESSENGER} target="_blank" rel="noopener"><FbIcon /> Message us</a>
             <a className="btn btn--ghost" href={FACEBOOK} target="_blank" rel="noopener">Visit our Facebook page</a>
           </div>
         </div>

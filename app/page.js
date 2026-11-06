@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { JsonLd, Avatar, meetingEvent } from '../components/Bits';
 import { FbIcon } from '../components/Chrome';
 import { members, leadership, findMember, speakers, fmtDate, nextThursday } from '../lib/data';
-import { FACEBOOK, MEETING, SITE_URL } from '../lib/site';
+import { FACEBOOK, MEETING, SITE_URL, VISITOR_REG } from '../lib/site';
 
 const FAQS = [
   ['Can I visit a meeting?', `Yes. Visitors are always welcome. We meet every ${MEETING.day} at ${MEETING.time} at ${MEETING.venue} in ${MEETING.city}. Come see how a referral meeting works and meet our members.`],
@@ -42,7 +42,7 @@ export default function Home() {
           <h1>Thursday mornings, the West Valley does business together.</h1>
           <p className="lux-hero__lead">BNI A1 Networkers is a referral circle of local business owners who meet over breakfast in Peoria every week, with one seat per profession.</p>
           <div className="btnrow">
-            <Link className="btn btn--light btn--lg" href="/visit/">Visit as our guest</Link>
+            <a className="btn btn--light btn--lg" href={VISITOR_REG} target="_blank" rel="noopener">Visit as our guest</a>
             <a className="btn btn--line-light btn--lg" href={FACEBOOK} target="_blank" rel="noopener"><FbIcon /> Facebook</a>
             {issue && <Link className="btn btn--line-light btn--lg" href={`/newsletter/${issue.slug}/`}>{fmtDate(issue.date, { month: 'long' })} newsletter</Link>}
           </div>

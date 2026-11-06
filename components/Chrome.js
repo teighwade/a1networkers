@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NAV, MEETING, FACEBOOK, BNI_CHAPTER, NAME, FORMERLY } from '../lib/site';
+import { NAV, MEETING, FACEBOOK, BNI_CHAPTER, NAME, FORMERLY, VISITOR_REG } from '../lib/site';
 
 export function Logo({ boxed }) {
   return (
@@ -24,7 +24,7 @@ export function Header() {
         <label htmlFor="nav-toggle" className="nav-btn" aria-hidden="true"><span /><span /><span /></label>
         <nav className="nav" aria-label="Main">
           {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
-          <Link className="btn btn--red nav__cta" href="/visit/">Be our guest</Link>
+          <a className="btn btn--red nav__cta" href={VISITOR_REG} target="_blank" rel="noopener">Be our guest</a>
         </nav>
       </div>
     </header>
