@@ -172,3 +172,5 @@ p { margin: 0 0 1em; }
 .ftr__base-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 @media (max-width: 900px) { .ftr__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .ftr__grid { grid-template-columns: 1fr; } }
+.member__ind { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin: 0 0 4px; }
+.mgrid + .updated { margin-top: 28px; }

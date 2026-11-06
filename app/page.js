@@ -109,7 +109,7 @@ export default function Home() {
       <section className="band cta">
         <div className="wrap center">
           <h2>Come see us this {MEETING.day}</h2>
-          <p>{MEETING.time} at {MEETING.venue}, {MEETING.street}, {MEETING.city}..</p>
+          <p>{MEETING.time} at {MEETING.venue}, {MEETING.street}, {MEETING.city}.</p>
           <div className="btnrow btnrow--center">
             <Link className="btn btn--white btn--lg" href="/visit/">Plan your visit</Link>
             <a className="btn btn--outline-white btn--lg" href={MEETING.map} target="_blank" rel="noopener">Get directions</a>
