@@ -21,3 +21,7 @@ Next.js site for the BNI A1 Networkers chapter (Peoria, AZ), hosted on Vercel. E
 - Never invent facts about a member business (no made-up prices, awards, years or reviews). Use their website, BNI profile and this repo.
 - Every post and issue gets a branded 1200x1200 image at /social/<slug>.png (newsletter: /social/newsletter-YYYY-MM.png), used for Facebook and link previews. Photos come from public/img/chapter/ (add more chapter photos there and to PHOTOS in app/social/[file]/route.js). Spotlight posts show the member logo from data/member-media.json.
 - Facebook: Metricool brand "BNI A1 Networkers" (blogId 7926423), Facebook only. The blog and newsletter scheduled tasks also schedule a Facebook post for each new post.
+
+## Live site
+
+The site has moved to its own domain: **https://bnia1networkers.com** (Vercel project a1networkers-zbls, DNS at GoDaddy). Use this domain in all links, Facebook posts and newsletters. a1networkers-zbls.vercel.app still works as a backup address.
