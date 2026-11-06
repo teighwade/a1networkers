@@ -58,7 +58,7 @@ export function Footer() {
       <div className="ftr__base">
         <div className="wrap ftr__base-in">
           <span>© {new Date().getFullYear()} {NAME}. BNI® and Givers Gain® are registered trademarks of BNI Global, LLC.</span>
-          <span className="ftr__credit">This custom website was built and is managed by <a href="https://checkoutoursite.com/" rel="noopener" target="_blank">Teigh</a> by <a href="https://logoloco.co/" rel="noopener" target="_blank">Logo Loco</a>. <a href="tel:+14805502871">480-550-2871</a></span>
+          <span className="ftr__credit">This custom website was built and is managed by <a href="https://checkoutoursite.com/" rel="noopener" target="_blank">Teigh</a> with <a href="https://logoloco.co/" rel="noopener" target="_blank">Logo Loco</a>. <a href="tel:+14805502871">480-550-2871</a></span>
         </div>
       </div>
     </footer>
