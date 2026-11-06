@@ -7,7 +7,8 @@
     "logo": "/img/members/rapid-fire.png"
   },
   "Adam Mistretta": {
-    "logo": "/img/members/horizon.png"
+    "logo": "/img/members/horizon.png",
+    "website": "https://www.mycarpetguys.com"
   },
   "Michael Rogoz": {
     "logo": "/img/members/my-az-electrician.png",
@@ -15,7 +16,8 @@
   },
   "Jordan Harford": {
     "logo": "/img/members/pro-solutions-air.png",
-    "banner": "/img/members/pro-solutions-air-banner.jpg"
+    "banner": "/img/members/pro-solutions-air-banner.jpg",
+    "website": "https://prosolutionsair.com"
   },
   "Ben LeMere": {
     "logo": "/img/members/acey-systems.png"
