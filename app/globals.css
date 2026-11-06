@@ -445,3 +445,6 @@ h3 { font-family: var(--display); font-size: 23px; font-weight: 600; }
 .roster a:hover b { color: var(--claret); text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: 4px; }
 .roster a:hover .avatar { box-shadow: 0 0 0 3px var(--brass-l); }
 .roster a span { color: var(--muted); font-size: 14.5px; line-height: 1.35; margin-top: 3px; }
+.member__cat { margin: 4px 0 0; font-weight: 600; color: var(--claret); font-size: 16px; }
+.member__cat + .member__spec { margin-top: 0; }
+.member__co + .member__spec { margin-top: 2px; }
