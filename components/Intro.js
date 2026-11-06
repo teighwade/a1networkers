@@ -32,7 +32,7 @@ export default function Intro() {
             </g>
           </svg>
           <span className="intro__spark intro__spark--1" /><span className="intro__spark intro__spark--2" /><span className="intro__spark intro__spark--3" />
-          <img className="intro__logo" src="/img/logo.png" alt="" width="600" height="295" />
+          <img className="intro__logo" src="/img/logo.webp" alt="" width="400" height="197" />
           <p className="intro__line">Givers Gain®</p>
         </div>
       </div>

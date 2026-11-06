@@ -20,6 +20,7 @@ export default function Blog() {
       </PageHero>
       <section className="band">
         <div className="wrap">
+          <h2 className="sr-only">All posts</h2>
           {all.length ? <PostGrid items={all} /> : <p>Our first posts are on the way.</p>}
           <p className="center mt"><Link className="tlink" href="/newsletter/">Read our monthly newsletter →</Link></p>
         </div>

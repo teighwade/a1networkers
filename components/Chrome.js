@@ -4,7 +4,7 @@ import { NAV, MEETING, FACEBOOK, BNI_CHAPTER, NAME, FORMERLY, VISITOR_REG } from
 export function Logo({ boxed }) {
   return (
     <Link href="/" className={boxed ? 'logo logo--boxed' : 'logo'} aria-label={`${NAME} home`}>
-      <img src="/img/logo.png" alt="BNI A1 Networkers" width="600" height="295" />
+      <img src="/img/logo.webp" alt="BNI A1 Networkers" width="400" height="197" />
     </Link>
   );
 }

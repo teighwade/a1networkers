@@ -1,14 +1,21 @@
-import '@fontsource/bodoni-moda/500.css';
-import '@fontsource/bodoni-moda/500-italic.css';
-import '@fontsource/bodoni-moda/600.css';
 import '@fontsource/unifrakturmaguntia/400.css';
 import '@fontsource/old-standard-tt/400.css';
 import '@fontsource/old-standard-tt/400-italic.css';
 import '@fontsource/old-standard-tt/700.css';
-import '@fontsource/instrument-sans/400.css';
-import '@fontsource/instrument-sans/500.css';
-import '@fontsource/instrument-sans/600.css';
+import localFont from 'next/font/local';
 import './globals.css';
+
+// Self-hosted, preloaded fonts with size-matched fallbacks (no layout shift when they load).
+const bodoni = localFont({ variable: '--font-bodoni', display: 'swap', src: [
+  { path: './fonts/bodoni-moda-latin-500-normal.woff2', weight: '500', style: 'normal' },
+  { path: './fonts/bodoni-moda-latin-500-italic.woff2', weight: '500', style: 'italic' },
+  { path: './fonts/bodoni-moda-latin-600-normal.woff2', weight: '600', style: 'normal' },
+], fallback: ['Georgia', 'serif'] });
+const instrument = localFont({ variable: '--font-instrument', display: 'swap', src: [
+  { path: './fonts/instrument-sans-latin-400-normal.woff2', weight: '400', style: 'normal' },
+  { path: './fonts/instrument-sans-latin-500-normal.woff2', weight: '500', style: 'normal' },
+  { path: './fonts/instrument-sans-latin-600-normal.woff2', weight: '600', style: 'normal' },
+], fallback: ['system-ui', 'Arial', 'sans-serif'] });
 import { Header, Footer } from '../components/Chrome';
 import { JsonLd } from '../components/Bits';
 import { SITE_URL, NAME, MEETING, FACEBOOK, BNI_CHAPTER, FORMERLY } from '../lib/site';
@@ -37,7 +44,7 @@ const org = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${bodoni.variable} ${instrument.variable}`}>
       <body>
         <JsonLd data={org} />
         <a className="skip" href="#main">Skip to content</a>

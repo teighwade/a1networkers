@@ -39,7 +39,7 @@ export default function Home() {
       <JsonLd data={faq} />
       <JsonLd data={meetingEvent(meetDate, next && nm ? `${next.name}, ${nm.company}` : null)} />
       <section className="lux-hero">
-        <img className="lux-hero__img" src="/img/hero.webp" alt="BNI A1 Networkers members networking before our Thursday meeting at Brothers Family Restaurant" width="1100" height="1100" />
+        <img className="lux-hero__img" src="/img/hero.webp" srcSet="/img/hero-600.webp 600w, /img/hero.webp 1100w" sizes="100vw" fetchPriority="high" alt="BNI A1 Networkers members networking before our Thursday meeting at Brothers Family Restaurant" width="1100" height="1100" />
         <div className="wrap lux-hero__in">
           <h1>Thursday mornings, the West Valley does business together.</h1>
           <p className="lux-hero__lead">BNI A1 Networkers is a referral circle of local business owners who meet over breakfast in Peoria every week, with one seat per profession.</p>
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="wrap lux-about__in">
           <p className="lux-statement">For more than twenty years, West Valley business owners have met at this table to trade introductions, advice and their most trusted referrals.</p>
           <div className="lux-about__side">
-            <img src="/img/about.webp" alt="Members listening to a presentation at a BNI A1 Networkers meeting" width="900" height="900" loading="lazy" />
+            <img src="/img/about.webp" srcSet="/img/about-500.webp 500w, /img/about.webp 900w" sizes="(max-width: 900px) 100vw, 45vw" alt="Members listening to a presentation at a BNI A1 Networkers meeting" width="900" height="900" loading="lazy" />
             <p>Formerly BNI Grand Networkers, our chapter is part of BNI, the world’s leading business referral organization. Members give short weekly presentations, pass referrals and meet one-to-one, all guided by Givers Gain®: help others grow, and your business grows with them.</p>
             <Link className="tlink" href="/about/">About the chapter</Link>
           </div>
@@ -109,7 +109,7 @@ export default function Home() {
           <ul className="roster">
             {all.map((m) => (
               <li key={m.name}>
-                <a href={m.profileUrl || '/members/'} target={m.profileUrl ? '_blank' : undefined} rel="noopener" aria-label={`${m.name.replace(/,.*$/, '')}, ${m.company}: BNI profile`}>
+                <a href={m.profileUrl || '/members/'} target={m.profileUrl ? '_blank' : undefined} rel="noopener" title={`${m.company}: BNI profile`}>
                   <Avatar name={m.name} size="lg" />
                   <b>{m.name.replace(/,.*$/, '')}</b>
                   <span>{m.specialty}</span>

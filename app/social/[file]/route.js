@@ -25,7 +25,7 @@ export async function GET(_req, { params }) {
   const n = [...slug].reduce((a, c) => a + c.charCodeAt(0), 0);
   const photoA = PHOTOS[n % PHOTOS.length], photoB = PHOTOS[(n + 1 + (n >> 2) % 3) % PHOTOS.length];
   const who = p.member || p.spotlight;
-  const logo = who ? memberMedia(who)?.logo?.replace(/^\//, '') : null;
+  const logo = who ? memberMedia(who)?.logo?.replace(/^\//, '').replace(/\.webp$/, '.png') : null;
   const len = p.title.length;
   const font = (w) => fs.readFileSync(path.join(process.cwd(), `node_modules/@fontsource/archivo/files/archivo-latin-${w}-normal.woff`));
   return new ImageResponse(

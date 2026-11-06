@@ -19,6 +19,7 @@ export default function Members() {
       </PageHero>
       <section className="band">
         <div className="wrap">
+          <h2 className="sr-only">Member directory</h2>
           <div className="mgrid">
             {all.map((m) => (
               <article key={m.name} className="card member">
