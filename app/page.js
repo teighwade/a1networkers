@@ -44,6 +44,7 @@ export default function Home() {
           <div className="btnrow">
             <Link className="btn btn--light btn--lg" href="/visit/">Visit as our guest</Link>
             <a className="btn btn--line-light btn--lg" href={FACEBOOK} target="_blank" rel="noopener"><FbIcon /> Facebook</a>
+            {issue && <Link className="btn btn--line-light btn--lg" href={`/newsletter/${issue.slug}/`}>{fmtDate(issue.date, { month: 'long' })} newsletter</Link>}
           </div>
         </div>
       </section>
