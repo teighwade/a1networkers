@@ -1,8 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import { PageHero } from '../../components/Bits';
 import { BNI_CHAPTER, FORMERLY } from '../../lib/site';
 
 export const metadata = { title: 'About Our Chapter', description: 'BNI A1 Networkers, formerly BNI Grand Networkers, has served the West Valley business community for over 20 years with weekly referral networking in Peoria, AZ.', alternates: { canonical: '/about/' } };
+
+const PHOTOS = fs.readdirSync(path.join(process.cwd(), 'public/img/chapter')).filter((f) => f.endsWith('.jpg')).sort((a, b) => (parseInt(a.replace(/\D/g, '')) || 99) - (parseInt(b.replace(/\D/g, '')) || 99));
 
 export default function About() {
   return (
@@ -12,7 +16,7 @@ export default function About() {
       </PageHero>
       <section className="band">
         <div className="wrap split">
-          <img className="split__img" src="/img/about.webp" alt="Members at breakfast during a BNI A1 Networkers meeting" width="600" height="600" />
+          <img className="split__img" src="/img/about.webp" alt="Members listening to a presentation at a BNI A1 Networkers meeting" width="900" height="900" />
           <div className="prose">
             <h2>Our story</h2>
             <p>BNI A1 Networkers, formerly {FORMERLY}, has helped West Valley businesses grow through referrals for over 20 years. We are one of many chapters of BNI (Business Network International), a global business referral organization.</p>
@@ -23,6 +27,17 @@ export default function About() {
         </div>
       </section>
       <section className="band band--soft">
+        <div className="wrap">
+          <h2>Inside our Thursday meetings</h2>
+          <p>Open networking over breakfast, member presentations and plenty of referrals at Brothers Family Restaurant in Peoria.</p>
+          <div className="gallery">
+            {PHOTOS.map((f) => (
+              <img key={f} src={`/img/chapter/${f}`} alt="BNI A1 Networkers members at a weekly meeting" width="900" height="900" loading="lazy" />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="band">
         <div className="wrap narrow">
           <h2>Givers Gain®</h2>
           <p>The heart of BNI is a simple idea: when you help others succeed, success comes back to you. Our members look for opportunities to send business to each other every week, and that generosity is what makes the chapter work.</p>

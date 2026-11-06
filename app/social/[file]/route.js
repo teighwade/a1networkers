@@ -15,7 +15,8 @@ const all = () => [
 export function generateStaticParams() { return all().map((p) => ({ file: `${p.slug}.png` })); }
 
 const dataUrl = (rel, type) => `data:${type};base64,${fs.readFileSync(path.join(process.cwd(), 'public', rel)).toString('base64')}`;
-const PHOTOS = ['img/chapter/meeting-1.jpg', 'img/chapter/meeting-2.jpg', 'img/chapter/meeting-3.jpg', 'img/chapter/meeting-4.jpg'];
+// Chapter photos named meeting-*.jpg rotate on the cards (gallery-*.jpg are for the About page only).
+const PHOTOS = fs.readdirSync(path.join(process.cwd(), 'public/img/chapter')).filter((f) => /^meeting-\d+\.jpg$/.test(f)).sort().map((f) => `img/chapter/${f}`);
 
 export async function GET(_req, { params }) {
   const slug = (await params).file.replace(/\.png$/, '');
