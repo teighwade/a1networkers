@@ -1,3 +1,5 @@
+import { PostGrid } from '../components/Posts';
+import { posts } from '../lib/content';
 export const revalidate = 3600; // refresh hourly so "next speaker" moves on after each meeting
 import Link from 'next/link';
 import { MeetingCard, NextSpeaker, JsonLd, Avatar } from '../components/Bits';
@@ -17,6 +19,7 @@ export default function Home() {
   const industries = [...new Set(all.map((m) => m.industry))].sort();
   const lead = leadership().roles.slice(0, 3);
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQS.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+  const latest = posts().slice(0, 3);
   return (
     <>
       <JsonLd data={faq} />
@@ -99,7 +102,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="band band--soft">
+      {latest.length > 0 && (
+        <section className="band band--soft">
+          <div className="wrap">
+            <div className="home-blog__head">
+              <div>
+                <p className="eyebrow">From the blog</p>
+                <h2>Networking tips and member stories</h2>
+              </div>
+              <div className="btnrow">
+                <Link className="btn btn--ghost" href="/blog/">All posts</Link>
+                <Link className="btn btn--red" href="/newsletter/">Monthly newsletter</Link>
+              </div>
+            </div>
+            <PostGrid items={latest} />
+          </div>
+        </section>
+      )}
+
+      <section className="band">
         <div className="wrap narrow">
           <h2 className="center">Questions about visiting</h2>
           <div className="faq">{FAQS.map(([q, a], i) => <details key={q} open={i === 0}><summary>{q}</summary><p>{a}</p></details>)}</div>

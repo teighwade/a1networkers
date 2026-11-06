@@ -47,7 +47,7 @@ export function Footer() {
         </div>
         <div>
           <h2>Explore</h2>
-          <ul>{NAV.slice(1).map((n) => <li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}</ul>
+          <ul>{NAV.map((n) => <li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}</ul>
         </div>
         <div>
           <h2>Connect</h2>

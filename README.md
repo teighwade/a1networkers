@@ -10,3 +10,12 @@ Next.js site for the BNI A1 Networkers chapter (Peoria, AZ), hosted on Vercel. E
 ## Rules
 - Blog posts may feature any member business EXCEPT Edward Jones (Steve Shmatko). Financial advisors have compliance rules, so he is never the subject of a blog post or written promotional post about his business. He stays on the member list, and photos of him at BNI meetings and events (including his presentation slides) are fine to use anywhere on the site.
 - BNI® and Givers Gain® are trademarks of BNI Global, LLC.
+
+## Blog and newsletter
+
+- Blog posts: `content/blog/YYYY-MM-DD-slug.md`, published Monday, Wednesday and Friday by a scheduled task.
+  Front matter: `title`, `date`, `category` (Networking, BNI, Member Spotlight, Business Tips, Seasonal), `description`, optional `member` (exact name from data/members.json, shows a contact card).
+- Newsletter: `content/newsletter/YYYY-MM.md`, published on the 1st of each month. Front matter: `title`, `date`, `spotlight` (member name), `description`.
+  Sections: welcome, member spotlight, seasonal tips (home + business), networking tip, BNI news, BNI Arizona events (bniarizona.com/en-US/events), in our chapter (speakers, new members), bring a guest.
+- Posts with a future `date` stay hidden until that day. RSS feed at /feed.xml.
+- Never invent facts about a member business (no made-up prices, awards, years or reviews). Use their website, BNI profile and this repo.
