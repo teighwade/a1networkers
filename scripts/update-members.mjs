@@ -3,14 +3,14 @@
 import fs from 'node:fs';
 import { chromium } from 'playwright';
 
-const URL = 'https://bniarizona.com/az-west-bni-a1-networkers/en-US/memberlist';
+const PAGE_URL = 'https://bniarizona.com/az-west-bni-a1-networkers/en-US/memberlist';
 const FILE = new URL('../data/members.json', import.meta.url);
 
 const fmtPhone = (p) => { const d = p.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, ''); return d.length === 10 ? `${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}` : p.trim(); };
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
-await page.goto(URL, { waitUntil: 'networkidle', timeout: 60000 });
+await page.goto(PAGE_URL, { waitUntil: 'networkidle', timeout: 60000 });
 await page.waitForSelector('table tbody tr td', { timeout: 30000 });
 // Show all rows if the table is paginated.
 await page.evaluate(() => { const s = document.querySelector('select[name$="_length"]'); if (s) { const o = [...s.options].at(-1); s.value = o.value; s.dispatchEvent(new Event('change', { bubbles: true })); } });
