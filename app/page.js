@@ -1,5 +1,6 @@
 import { PostCard } from '../components/Posts';
 import Carousel from '../components/Carousel';
+import Intro from '../components/Intro';
 import { posts, issues } from '../lib/content';
 export const revalidate = 3600; // refresh hourly so "next speaker" moves on after each meeting
 import Link from 'next/link';
@@ -34,6 +35,7 @@ export default function Home() {
   ];
   return (
     <>
+      <Intro />
       <JsonLd data={faq} />
       <JsonLd data={meetingEvent(meetDate, next && nm ? `${next.name}, ${nm.company}` : null)} />
       <section className="lux-hero">
