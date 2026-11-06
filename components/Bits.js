@@ -34,6 +34,7 @@ export function MeetingCard() {
 
 export function Avatar({ name, size = 'md' }) {
   const media = memberMedia(name);
+  if (media?.photo) return <span className={`avatar avatar--${size} avatar--photo`} aria-hidden="true"><img src={media.photo} alt="" width="320" height="320" loading="lazy" /></span>;
   if (media?.logo) return <span className={`avatar avatar--${size} avatar--logo`} aria-hidden="true"><img src={media.logo} alt="" width="400" height="400" loading="lazy" /></span>;
   return <span className={`avatar avatar--${size}`} aria-hidden="true">{initials(name)}</span>;
 }

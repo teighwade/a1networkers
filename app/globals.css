@@ -229,3 +229,7 @@ p { margin: 0 0 1em; }
 .gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 14px; }
 .gallery img:first-child { grid-column: span 2; grid-row: span 2; }
 .post__banner { width: 100%; border-radius: 16px; margin: 0 0 28px; box-shadow: var(--shadow); }
+.avatar--photo { overflow: hidden; background: #ddd; }
+.avatar--photo img { width: 100%; height: 100%; object-fit: cover; }
+.avatar--photo.avatar--md { width: 64px; height: 64px; }
+.avatar--photo.avatar--lg { width: 84px; height: 84px; }
