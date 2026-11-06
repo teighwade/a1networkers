@@ -3,9 +3,9 @@ title: "Member Spotlight: Taylor Benefit Consulting"
 date: 2026-07-29
 category: Member Spotlight
 member: Michael Taylor
-description: Meet Michael Taylor of Taylor Benefit Consulting, who holds the health insurance seat at BNI A1 Networkers and also serves as Mentor Coordinator.
+description: Meet Michael Taylor of Taylor Benefit Consulting, who holds the health insurance seat at BNI A1 Networkers.
 ---
-Every BNI chapter has one seat per profession, and at BNI A1 Networkers the health insurance seat belongs to **Michael Taylor** of **Taylor Benefit Consulting**. Michael also serves as our chapter's **Mentor Coordinator**, helping new members get settled and learn how the referral system works.
+Every BNI chapter has one seat per profession, and at BNI A1 Networkers the health insurance seat belongs to **Michael Taylor** of **Taylor Benefit Consulting**.
 
 ## What Michael does
 
@@ -29,10 +29,6 @@ A few reasons it helps to have someone local:
 Late July in the Valley is a natural pause for a lot of families. Kids are getting ready to go back to school, and many small business owners are using the slower summer weeks to plan for the rest of the year. It is also a good time to look at health coverage before the busier fall season, when many people start thinking about their plans for next year.
 
 If someone you know has been putting off a conversation about their health insurance, summer is a reasonable time to have it, while there is no rush.
-
-## Helping new members as Mentor Coordinator
-
-As Mentor Coordinator, Michael helps make sure new members are not left to figure things out on their own. The first weeks in a BNI chapter come with a lot to learn: how to give a weekly presentation, how to set up one-to-ones and how to pass and track referrals. A good mentor shortens that learning curve and helps new members start contributing sooner.
 
 ## How you can refer Michael
 

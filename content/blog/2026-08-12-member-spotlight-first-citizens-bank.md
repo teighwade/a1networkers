@@ -5,7 +5,7 @@ category: Member Spotlight
 description: Meet Lisa Gill of First Citizens Bank, who holds the banking seat at BNI A1 Networkers and helps people and businesses with their banking needs.
 member: Lisa Gill
 ---
-Every BNI chapter has one seat per profession, and at BNI A1 Networkers the banking seat belongs to **Lisa Gill** of **First Citizens Bank**. Lisa is also one of our **Visitor Hosts**, so if you are coming to a meeting for the first time, she may well be the person who welcomes you, introduces you around and answers your questions afterward.
+Every BNI chapter has one seat per profession, and at BNI A1 Networkers the banking seat belongs to **Lisa Gill** of **First Citizens Bank**.
 
 ## What First Citizens Bank offers
 
@@ -57,4 +57,4 @@ To connect someone with Lisa, call 623-815-4304 or point them to [firstcitizens.
 
 ## Meet Lisa in person
 
-Lisa is at BNI A1 Networkers every Thursday at 7:00 AM at Brothers Family Restaurant in Peoria. As one of our Visitor Hosts, she would be glad to show you around. [Plan your visit](/visit/).
+Lisa is at BNI A1 Networkers every Thursday at 7:00 AM at Brothers Family Restaurant in Peoria. Come say hello. [Plan your visit](/visit/).

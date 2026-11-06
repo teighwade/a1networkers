@@ -2,12 +2,10 @@
 title: "Member Spotlight: Sabrina's Sparkling Clean LLC"
 date: 2026-06-10
 category: Member Spotlight
-description: Meet Sabrina Roberts of Sabrina's Sparkling Clean, the residential cleaning member of BNI A1 Networkers and our chapter Secretary/Treasurer.
+description: Meet Sabrina Roberts of Sabrina's Sparkling Clean, the residential cleaning member of BNI A1 Networkers.
 member: Sabrina Roberts
 ---
 BNI chapters hold one seat per profession, and at BNI A1 Networkers the residential cleaning seat belongs to **Sabrina's Sparkling Clean LLC**, represented by **Sabrina Roberts**.
-
-Sabrina also serves as our chapter's **Secretary/Treasurer**, one of the leadership roles that keeps a BNI chapter running smoothly week after week. If you visit on a Thursday morning, there is a good chance she is one of the people helping make sure everything is in order.
 
 ## What Sabrina's Sparkling Clean does
 

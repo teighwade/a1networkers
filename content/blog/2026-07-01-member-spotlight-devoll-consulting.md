@@ -5,7 +5,7 @@ category: Member Spotlight
 member: Tanya Devoll
 description: Meet Tanya Devoll of Devoll Consulting, a Buckeye CPA offering bookkeeping, tax preparation and fuel tax reporting for businesses and individuals.
 ---
-Every BNI chapter has one seat per profession, and at BNI A1 Networkers the accounting services seat belongs to **Tanya Devoll**, CPA and owner of **Devoll Consulting**. Tanya also serves on our chapter's Membership Committee, helping make sure the right professionals find their way to our table.
+Every BNI chapter has one seat per profession, and at BNI A1 Networkers the accounting services seat belongs to **Tanya Devoll**, CPA and owner of **Devoll Consulting**.
 
 ## A West Valley accounting practice
 

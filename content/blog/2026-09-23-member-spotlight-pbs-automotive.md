@@ -2,12 +2,10 @@
 title: "Member Spotlight: PBS Automotive"
 date: 2026-09-23
 category: Member Spotlight
-description: Meet Robert Velasco of PBS Automotive, the auto repair shop holding the car repair seat at BNI A1 Networkers and one of our visitor hosts.
+description: Meet Robert Velasco of PBS Automotive, the auto repair shop holding the car repair seat at BNI A1 Networkers.
 member: Robert Velasco
 ---
 Every BNI chapter has one seat per profession, and at BNI A1 Networkers the auto repair seat belongs to **PBS Automotive**, represented by **Robert Velasco**.
-
-If you visit our chapter, there is a good chance Robert will be one of the first people you meet. He serves as one of our **Visitor Hosts**, welcoming guests, answering questions and making sure first-time visitors feel at home.
 
 ## What PBS Automotive does
 
@@ -53,4 +51,4 @@ If someone you know fits, connect them with Robert at **602-397-4277**.
 
 ## Meet Robert in person
 
-Robert is at BNI A1 Networkers every Thursday at 7:00 AM at Brothers Family Restaurant in Peoria, and as a visitor host, he is one of the people who will greet you at the door. Come meet him and see how our chapter works. [Plan your visit](/visit/).
+Robert is at BNI A1 Networkers every Thursday at 7:00 AM at Brothers Family Restaurant in Peoria. Come meet him and see how our chapter works. [Plan your visit](/visit/).

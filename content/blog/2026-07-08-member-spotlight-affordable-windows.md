@@ -5,7 +5,7 @@ category: Member Spotlight
 description: Meet Affordable Windows Plus Exteriors, offering custom replacement windows and patio doors built for the Arizona heat, with free in-home estimates.
 member: Rudy Pacheco
 ---
-At BNI A1 Networkers, every seat belongs to one profession, and the windows and doors seat belongs to **Affordable Windows Plus Exteriors**, represented in our chapter by **Rudy Pacheco**. Rudy is also one of our **Visitor Hosts**, which means he is often one of the first friendly faces guests meet on a Thursday morning.
+At BNI A1 Networkers, every seat belongs to one profession, and the windows and doors seat belongs to **Affordable Windows Plus Exteriors**, represented in our chapter by **Rudy Pacheco**.
 
 ## Replacement windows built for Arizona
 

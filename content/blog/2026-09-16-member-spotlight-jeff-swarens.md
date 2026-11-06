@@ -1,11 +1,11 @@
 ---
-title: "Member Spotlight: RE/MAX Professionals"
+title: "Member Spotlight: Jeff Swarens, Realty ONE Group"
 date: 2026-09-16
 category: Member Spotlight
 description: Meet Jeff Swarens, the residential real estate agent in our chapter, helping buyers and sellers across Peoria, Surprise, Glendale and the Sun Cities.
 member: Jeff Swarens
 ---
-Every BNI chapter holds one seat per profession, and at BNI A1 Networkers the residential real estate seat belongs to **Jeff Swarens** of **RE/MAX Professionals**. Jeff also serves as our chapter's **Events Coordinator**, so he is a big part of the social side of the chapter as well as the business side.
+Every BNI chapter holds one seat per profession, and at BNI A1 Networkers the residential real estate seat belongs to **Jeff Swarens** of **Realty ONE Group**.
 
 ## A licensed West Valley agent
 

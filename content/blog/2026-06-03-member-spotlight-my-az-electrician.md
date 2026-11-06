@@ -5,7 +5,7 @@ category: Member Spotlight
 description: Meet My AZ Electrician, the family-owned Peoria electrical contractor handling residential, commercial and emergency work across the Valley.
 member: Michael Rogoz
 ---
-In a BNI chapter, every seat belongs to one profession. At BNI A1 Networkers, the electrician seat belongs to **My AZ Electrician LLC**, owned and represented in our chapter by **Michael Rogoz**. Mike also serves as our chapter **President**, so if you visit on a Thursday morning, there is a good chance he will be one of the first people to shake your hand.
+In a BNI chapter, every seat belongs to one profession. At BNI A1 Networkers, the electrician seat belongs to **My AZ Electrician LLC**, owned and represented in our chapter by **Michael Rogoz**.
 
 ## A family-owned Peoria contractor
 
@@ -56,4 +56,4 @@ If someone you know fits, connect them with Mike at 623-363-5648 or point them t
 
 ## Meet Mike in person
 
-Mike is at BNI A1 Networkers every Thursday at 7:00 AM at Brothers Family Restaurant in Peoria. Come have breakfast, hear how our chapter passes referrals and say hello to our President. [Plan your visit](/visit/).
+Mike is at BNI A1 Networkers every Thursday at 7:00 AM at Brothers Family Restaurant in Peoria. Come have breakfast, hear how our chapter passes referrals and say hello to Mike. [Plan your visit](/visit/).

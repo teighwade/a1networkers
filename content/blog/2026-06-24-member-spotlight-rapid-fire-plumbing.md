@@ -5,7 +5,7 @@ category: Member Spotlight
 member: Tom Adkins
 description: Meet Tom Adkins of Rapid Fire Plumbing, the residential and commercial plumber who holds the plumbing seat at BNI A1 Networkers.
 ---
-In BNI, each chapter has just one seat per profession. At BNI A1 Networkers, the plumbing seat belongs to **Tom Adkins**, owner of **Rapid Fire Plumbing, LLC**. Tom also serves as our chapter's **Education Coordinator**, sharing short lessons that help members get better at networking and referrals.
+In BNI, each chapter has just one seat per profession. At BNI A1 Networkers, the plumbing seat belongs to **Tom Adkins**, owner of **Rapid Fire Plumbing, LLC**.
 
 ## What Rapid Fire Plumbing does
 

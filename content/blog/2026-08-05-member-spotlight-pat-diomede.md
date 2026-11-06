@@ -5,7 +5,7 @@ category: Member Spotlight
 member: Pat Diomede
 description: Meet Pat Diomede, a West Valley loan officer with Fairway Independent Mortgage who helps buyers and homeowners with purchase loans and refinancing.
 ---
-Every BNI chapter has one seat per profession, and at BNI A1 Networkers the residential mortgage seat belongs to **Pat Diomede**, a loan officer with **Fairway Independent Mortgage Corporation**. Pat also serves on our chapter's Membership Committee, helping welcome new professionals into the group.
+Every BNI chapter has one seat per profession, and at BNI A1 Networkers the residential mortgage seat belongs to **Pat Diomede**, a loan officer with **Fairway Independent Mortgage Corporation**.
 
 ## A long career in mortgages
 

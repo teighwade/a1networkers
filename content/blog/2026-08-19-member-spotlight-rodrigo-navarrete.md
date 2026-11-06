@@ -7,8 +7,6 @@ member: Rodrigo Navarrete
 ---
 In BNI, each chapter holds just one seat per profession. At BNI A1 Networkers, the property and casualty insurance seat belongs to **Rodrigo Navarrete**, an insurance agent with Comparion Insurance Agency, which offers Liberty Mutual coverage, working out of the Peoria office.
 
-Rodrigo also serves on our chapter's **Membership Committee**, helping visitors learn how the chapter works and helping new members get connected.
-
 ## A background built on service
 
 Rodrigo did not take the usual path into insurance. He is an **Army veteran who served as a paratrooper**, and before insurance he spent about **20 years as a surgical technologist in trauma surgery**. He has described himself as a coach, a father and a mentor, and that background shows in how he works with people.

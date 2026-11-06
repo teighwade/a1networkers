@@ -7,8 +7,6 @@ member: Ben LeMere
 ---
 In a BNI chapter, every profession gets one seat. At BNI A1 Networkers, the IT consulting seat belongs to **Acey Systems**, represented by owner **Ben LeMere**.
 
-Ben also serves on our chapter's **Membership Committee**, the group that helps visitors understand how the chapter works and helps new members get off to a strong start.
-
 ## What Acey Systems does
 
 Acey Systems is a Peoria-based IT company that helps businesses keep their technology working so they can focus on their actual work. Their services center on:
