@@ -486,3 +486,10 @@ h3 { font-family: var(--display); font-size: 23px; font-weight: 600; }
 :root { --brass-text: #7d5f2b; }
 .eyebrow, .invite__k, .member__ind, .lux-about .eyebrow { color: var(--brass-text); }
 .band--dark .eyebrow, .eyebrow--light { color: var(--brass-l); }
+
+/* Holiday banners (components/Holiday.js): hidden unless today's class is on <html> */
+.hol-banner { display: none; align-items: center; justify-content: center; gap: 12px; padding: 10px 16px; text-align: center; color: #fff; font-size: 15px; line-height: 1.4; }
+.hol-banner p { margin: 0; color: #fff; }
+.hol-banner span { font-size: 20px; }
+html.hol-veterans .hol-banner--veterans { display: flex; }
+.hol-banner--veterans { background: linear-gradient(90deg, #0a2463, #b22234 50%, #0a2463); border-bottom: 2px solid rgba(255, 255, 255, .5); }

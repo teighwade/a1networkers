@@ -4,6 +4,7 @@ import '@fontsource/old-standard-tt/400-italic.css';
 import '@fontsource/old-standard-tt/700.css';
 import localFont from 'next/font/local';
 import './globals.css';
+import HolidayBanner from '../components/Holiday';
 
 // Self-hosted, preloaded fonts with size-matched fallbacks (no layout shift when they load).
 const bodoni = localFont({ variable: '--font-bodoni', display: 'swap', src: [
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
       <body>
         <JsonLd data={org} />
         <a className="skip" href="#main">Skip to content</a>
+        <HolidayBanner />
         <Header />
         <main id="main">{children}</main>
         <Footer />
